@@ -5,21 +5,21 @@
 class Nollama < Formula
   desc "An embeddable, Ollama-compatible LLM engine and server, in Go"
   homepage "https://github.com/benallfree/nollama"
-  version "0.0.1-alpha.2"
+  version "0.0.1-alpha.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.2/nollama_0.0.1-alpha.2_darwin_amd64.zip"
-      sha256 "3209becbce66f2cb0df5663de22354cb221d3f7c4be1c541a1c3689885d54734"
+      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.3/nollama_0.0.1-alpha.3_darwin_amd64.zip"
+      sha256 "883cc8b274f4ef887c836489e44b91ffca038452e0fc58c6621f805127f7902e"
 
       define_method(:install) do
         bin.install "nollama"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.2/nollama_0.0.1-alpha.2_darwin_arm64.zip"
-      sha256 "78d9532e7754643b10fce2807c520f552f6c0e9f4db7ec95a46bdb0df925df4a"
+      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.3/nollama_0.0.1-alpha.3_darwin_arm64.zip"
+      sha256 "09928579d46c427f9335005560a16059b4c34b3d79b4894839d6227f8439027b"
 
       define_method(:install) do
         bin.install "nollama"
@@ -29,15 +29,15 @@ class Nollama < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.2/nollama_0.0.1-alpha.2_linux_amd64.zip"
-      sha256 "3f0f074c894c7495756a99460604cc28a3a9e5a96dad2368dd2822b1afe18eae"
+      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.3/nollama_0.0.1-alpha.3_linux_amd64.zip"
+      sha256 "2cce4f025ef30f71a27cfbb373021fe867ce4edd75fd74c5032ee43ed6bc28f0"
       define_method(:install) do
         bin.install "nollama"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.2/nollama_0.0.1-alpha.2_linux_arm64.zip"
-      sha256 "eb0b290fa9ddc615e14f5f5e6dc23d48b7117e3df81c4b554929f239abd75a65"
+      url "https://github.com/benallfree/nollama/releases/download/v0.0.1-alpha.3/nollama_0.0.1-alpha.3_linux_arm64.zip"
+      sha256 "a21a880833e6be73158f3f8843b39fbc62aee0ab3629f5bbf15abfc17863ed58"
       define_method(:install) do
         bin.install "nollama"
       end
