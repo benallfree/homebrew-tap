@@ -1,28 +1,28 @@
 class Surprisal < Formula
   desc "Lossless compressor that codes with a language model, bit-identical on any hardware"
   homepage "https://github.com/benallfree/surprisal"
-  version "0.0.1-alpha.1"
+  version "0.0.1-alpha.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.1/surprisal_0.0.1-alpha.1_darwin_arm64.tar.gz"
-      sha256 "58434f2d94d47e348071ba453000f59f546c4f14a7056ba855a24c53fd8b2e01"
+      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.2/surprisal_0.0.1-alpha.2_darwin_arm64.tar.gz"
+      sha256 "53d241eff95e7b49a8f1aebe8fc08fe8024cb9d0e0ca8ce6fa7df41c48589fa4"
     end
     on_intel do
-      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.1/surprisal_0.0.1-alpha.1_darwin_amd64.tar.gz"
-      sha256 "7e6326af9a78fdbfdc6f3d762818013b1e31ca74ac68944fcd70be6914b76908"
+      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.2/surprisal_0.0.1-alpha.2_darwin_amd64.tar.gz"
+      sha256 "8ef43c73221781b72ecae0ad6341b3addd6c99ea5d61094e74b0dd9e83540805"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.1/surprisal_0.0.1-alpha.1_linux_arm64.tar.gz"
-      sha256 "f71dac9fea90241f0abf088a4a96923ed198f722a37e37cbede7af4fb5d0d02e"
+      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.2/surprisal_0.0.1-alpha.2_linux_arm64.tar.gz"
+      sha256 "a2fb325096deae1971452ebc3b3b5a5713ff81fb76a794cdbd2e2833cd8eabb6"
     end
     on_intel do
-      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.1/surprisal_0.0.1-alpha.1_linux_amd64.tar.gz"
-      sha256 "02045fe3de6548d87059018340d7d697023387a873c1d3c420103d2c0e0940de"
+      url "https://github.com/benallfree/surprisal/releases/download/v0.0.1-alpha.2/surprisal_0.0.1-alpha.2_linux_amd64.tar.gz"
+      sha256 "69d006c0c8d90d83faa1b541314b513bcad768f94bf36cb62cebaf35161aca18"
     end
   end
 
@@ -32,9 +32,9 @@ class Surprisal < Formula
 
   def caveats
     <<~EOS
-      Install a model before the first use (downloads the official weights and converts them):
-        surprisal --setup good     # Qwen2.5-Coder-0.5B, 0.5 GB
-        surprisal --setup best     # Qwen2.5-Coder-7B, 7.3 GB, the default profile
+      The first use of a level downloads its model into ~/.surprisal (once):
+        surprisal -1 ...     # levels 1-3 (-1 is the default): 0.5 GB
+        surprisal -9 ...     # levels 7-9: 7.9 GB
     EOS
   end
 
